@@ -94,7 +94,10 @@
         }
 
         .link-item {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
             padding: 16px 24px;
             background: #21262d;
             color: #c9d1d9;
@@ -103,7 +106,12 @@
             transition: all 0.2s ease;
             border: 1px solid #30363d;
             font-size: 1.05em;
-            text-align: center;
+        }
+
+        .link-item img {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
         }
 
         .link-item:nth-child(5) {
@@ -171,11 +179,26 @@
         </div>
 
         <div class="links">
-            <a href="https://cloud.fujingzhai.top" class="link-item" target="_blank">云空间</a>
-            <a href="https://photos.fujingzhai.top" class="link-item" target="_blank">云相册</a>
-            <a href="https://blinko.fujingzhai.top/share" class="link-item" target="_blank">Blinko</a>
-            <a href="https://siyuan.fujingzhai.top" class="link-item" target="_blank">SiYuan</a>
-            <a href="https://notion.fujingzhai.top" class="link-item" target="_blank">Notion</a>
+            <a href="https://cloud.fujingzhai.top" class="link-item" target="_blank">
+                <img src="https://api.iconify.design/simple-icons:cloudflare.svg?color=%23409EFF" alt="Cloudflare">
+                云空间
+            </a>
+            <a href="https://photos.fujingzhai.top" class="link-item" target="_blank">
+                <img src="https://avatars.githubusercontent.com/u/32436079?s=200&v=4" alt="Photos">
+                云相册
+            </a>
+            <a href="https://blinko.fujingzhai.top/share" class="link-item" target="_blank">
+                <img src="https://avatars.githubusercontent.com/u/186030902?v=4" alt="Blinko">
+                Blinko
+            </a>
+            <a href="https://siyuan.fujingzhai.top" class="link-item" target="_blank">
+                <img src="https://api.iconify.design/simple-icons:siyuan.svg?color=%23d1891c" alt="SiYuan">
+                SiYuan
+            </a>
+            <a href="https://notion.fujingzhai.top" class="link-item" target="_blank">
+                <img src="https://api.iconify.design/simple-icons:notion.svg?color=%23000000" alt="Notion">
+                Notion
+            </a>
         </div>
 
         <div class="footer">
