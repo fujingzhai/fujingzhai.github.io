@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>复经斋</title>
     <link rel="icon" href="https://api.iconify.design/simple-icons:obsidian.svg?color=%23000000">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
     <style>
         * {
             margin: 0;
@@ -13,8 +14,9 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            font-family: "LXGW WenKai", sans-serif;
+            background: #0d1117;
+            color: #c9d1d9;
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -23,93 +25,161 @@
         }
 
         .container {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 16px;
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
             padding: 60px 50px;
-            max-width: 700px;
+            max-width: 800px;
             width: 100%;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            text-align: center;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 50px;
+            gap: 20px;
+        }
+
+        .logo {
+            width: 64px;
+            height: 64px;
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
         }
 
         h1 {
-            font-size: 3em;
-            color: #2c3e50;
-            margin-bottom: 40px;
-            font-weight: 300;
-            letter-spacing: 8px;
+            font-size: 3.5em;
+            color: #f0f6fc;
+            font-weight: 700;
+            letter-spacing: 4px;
+            font-family: "LXGW WenKai", serif;
+        }
+
+        .quote-box {
+            margin-bottom: 50px;
         }
 
         .quote {
-            color: #5a6c7d;
-            font-size: 1.1em;
-            line-height: 2;
-            margin-bottom: 10px;
-            white-space: pre-line;
+            color: #8b949e;
+            font-size: 1.2em;
+            line-height: 1.8;
+            text-align: center;
+            margin-bottom: 12px;
         }
 
         .author {
-            color: #8795a1;
-            font-size: 0.95em;
-            margin-bottom: 50px;
+            color: #6e7681;
+            font-size: 1em;
+            text-align: right;
             font-style: italic;
+            padding-right: 20px;
         }
 
         .links {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 15px;
-            margin-top: 40px;
+            margin-bottom: 40px;
         }
 
         .link-item {
             display: block;
             padding: 16px 24px;
-            background: #f8f9fa;
-            color: #495057;
+            background: #21262d;
+            color: #c9d1d9;
             text-decoration: none;
             border-radius: 8px;
-            transition: all 0.3s ease;
-            border: 1px solid #e9ecef;
-            font-size: 0.95em;
+            transition: all 0.2s ease;
+            border: 1px solid #30363d;
+            font-size: 1.05em;
+            text-align: center;
+        }
+
+        .link-item:nth-child(5) {
+            grid-column: 1 / -1;
+            max-width: 50%;
+            margin: 0 auto;
+            width: 100%;
         }
 
         .link-item:hover {
-            background: #495057;
-            color: #fff;
+            background: #30363d;
+            border-color: #58a6ff;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .footer {
+            text-align: center;
+            color: #6e7681;
+            font-size: 0.9em;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #30363d;
         }
 
         @media (max-width: 600px) {
             h1 {
-                font-size: 2em;
-                letter-spacing: 4px;
+                font-size: 2.5em;
+                letter-spacing: 2px;
+            }
+            .header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .logo {
+                width: 56px;
+                height: 56px;
             }
             .container {
                 padding: 40px 30px;
             }
             .quote {
-                font-size: 1em;
+                font-size: 1.05em;
+            }
+            .links {
+                grid-template-columns: 1fr;
+            }
+            .link-item:nth-child(5) {
+                max-width: 100%;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>复经斋</h1>
+        <div class="header">
+            <div class="logo">
+                <img src="https://api.iconify.design/simple-icons:obsidian.svg?color=%23000000" alt="Logo">
+            </div>
+            <h1>复经斋</h1>
+        </div>
         
-        <div class="quote">凡人之患，蔽於一曲而闇於大理。
-治則復經，兩疑則惑矣。</div>
-        
-        <div class="author">——《荀子·解蔽》</div>
+        <div class="quote-box">
+            <div class="quote">凡人之患，蔽于一曲而暗于大理，治则复经，两疑则惑矣。</div>
+            <div class="author">——《荀子·解蔽》</div>
+        </div>
 
         <div class="links">
             <a href="https://notion.fujingzhai.top" class="link-item" target="_blank">Notion主页</a>
             <a href="https://blinko.fujingzhai.top/share" class="link-item" target="_blank">Blinko主页</a>
-            <a href="https://siyuan.fujingzhai.top" class="link-item" target="_blank">复经斋笔记</a>
-            <a href="https://cloud.fujingzhai.top" class="link-item" target="_blank">复经斋云空间</a>
-            <a href="https://photos.fujingzhai.top" class="link-item" target="_blank">复经斋相册</a>
+            <a href="https://siyuan.fujingzhai.top" class="link-item" target="_blank">思源笔记</a>
+            <a href="https://cloud.fujingzhai.top" class="link-item" target="_blank">云空间</a>
+            <a href="https://photos.fujingzhai.top" class="link-item" target="_blank">云相册</a>
+        </div>
+
+        <div class="footer">
+            © 2026 ｜ 游夏
         </div>
     </div>
 </body>
