@@ -3,85 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>复经斋GitHub主页</title>
-    <link rel="icon" href="https://github.githubassets.com/favicons/favicon.svg">
+    <title>复经斋</title>
+    <link rel="icon" href="https://api.iconify.design/simple-icons:obsidian.svg?color=%23000000">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 20px;
         }
-        
+
         .container {
-            background: white;
-            padding: 60px 40px;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 16px;
+            padding: 60px 50px;
+            max-width: 700px;
+            width: 100%;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
             text-align: center;
-            max-width: 600px;
-            animation: fadeIn 1s ease-in;
         }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
+
         h1 {
             font-size: 3em;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            font-weight: 300;
+            letter-spacing: 8px;
         }
-        
-        p {
-            font-size: 1.2em;
-            color: #666;
-            margin-bottom: 30px;
-            line-height: 1.6;
+
+        .quote {
+            color: #5a6c7d;
+            font-size: 1.1em;
+            line-height: 2;
+            margin-bottom: 10px;
+            white-space: pre-line;
         }
-        
+
+        .author {
+            color: #8795a1;
+            font-size: 0.95em;
+            margin-bottom: 50px;
+            font-style: italic;
+        }
+
         .links {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
+            margin-top: 40px;
         }
-        
-        .btn {
-            padding: 12px 30px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+
+        .link-item {
+            display: block;
+            padding: 16px 24px;
+            background: #f8f9fa;
+            color: #495057;
             text-decoration: none;
-            border-radius: 25px;
-            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+            font-size: 0.95em;
         }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+
+        .link-item:hover {
+            background: #495057;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+                letter-spacing: 4px;
+            }
+            .container {
+                padding: 40px 30px;
+            }
+            .quote {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🎉 欢迎</h1>
-        <p>这是 复经斋GitHub主页</p>
-        <p>使用 GitHub Pages 免费托管</p>
+        <h1>复经斋</h1>
         
+        <div class="quote">凡人之患，蔽於一曲而闇於大理。
+治則復經，兩疑則惑矣。</div>
+        
+        <div class="author">——《荀子·解蔽》</div>
+
         <div class="links">
-            <a href="https://github.com/fujingzhai" class="btn">我的 GitHub</a>
-            <a href="https://github.com/fujingzhai/archive" class="btn">复经斋 Archive</a>
+            <a href="https://notion.fujingzhai.top" class="link-item" target="_blank">Notion主页</a>
+            <a href="https://blinko.fujingzhai.top/share" class="link-item" target="_blank">Blinko主页</a>
+            <a href="https://siyuan.fujingzhai.top" class="link-item" target="_blank">复经斋笔记</a>
+            <a href="https://cloud.fujingzhai.top" class="link-item" target="_blank">复经斋云空间</a>
+            <a href="https://photos.fujingzhai.top" class="link-item" target="_blank">复经斋相册</a>
         </div>
     </div>
 </body>
