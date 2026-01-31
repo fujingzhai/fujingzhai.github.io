@@ -98,7 +98,7 @@
         .link-item {
             display: flex;
             align-items: center;
-            justify-content: center; /* 电脑端保持居中 */
+            justify-content: center; /* 保持居中对齐 */
             gap: 12px;
             padding: 16px 24px;
             background: #21262d;
@@ -142,7 +142,7 @@
             text-decoration: none;
             font-size: 0.9em;
             transition: all 0.3s ease;
-            white-space: nowrap; /* 防止邮箱换行 */
+            white-space: nowrap;
         }
 
         .contact-item img {
@@ -166,7 +166,7 @@
             font-size: 0.9em;
         }
 
-        /* 移动端适配核心代码 */
+        /* 移动端适配 */
         @media (max-width: 600px) {
             h1 {
                 font-size: 2.5em;
@@ -177,26 +177,21 @@
                 gap: 15px;
             }
             .container {
-                padding: 40px 20px; /* 稍微减少手机端的内边距，给内容更多空间 */
+                padding: 40px 20px;
             }
             .quote {
                 font-size: 1.05em;
             }
-            
-            /* 1. 修复按钮对齐：强制单列，且强制左对齐+固定缩进 */
+            /* 移动端变为单列，但对齐方式跟随全局（居中） */
             .links {
-                grid-template-columns: 1fr; 
+                grid-template-columns: 1fr;
             }
-            .link-item {
-                justify-content: flex-start; /* 关键：左对齐，让图标在一条线上 */
-                padding-left: 28%; /* 关键：左侧留白28%，视觉上看起来像是在中间，但对齐很完美 */
-            }
-
-            /* 2. 修复联系方式溢出：改为上下垂直排列 */
+            
+            /* 联系方式在手机上改为垂直排列，防止溢出 */
             .contact-box {
-                flex-direction: column; /* 垂直排列 */
-                align-items: center;    /* 居中对齐 */
-                gap: 12px;              /* 缩小间距 */
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
             }
         }
     </style>
@@ -243,11 +238,11 @@
         </div>
 
         <div class="contact-box">
-            <a href="mailto:youxia2025@gmail.com" class="contact-item" title="发送邮件到我的 Gmail">
+            <a href="mailto:youxia2025@gmail.com" class="contact-item" title="发送邮件到 Gmail">
                 <img src="https://api.iconify.design/simple-icons:gmail.svg?color=%23c9d1d9" alt="Gmail">
                 youxia2025@gmail.com
             </a>
-            <a href="mailto:fujingzhai5@163.com" class="contact-item" title="发送邮件到我的网易邮箱">
+            <a href="mailto:fujingzhai5@163.com" class="contact-item" title="发送邮件到网易邮箱">
                 <img src="https://api.iconify.design/mdi:email.svg?color=%23c9d1d9" alt="163 Mail">
                 fujingzhai5@163.com
             </a>
