@@ -51,7 +51,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-shrink: 0; /* 防止Logo被压缩 */
+            flex-shrink: 0;
         }
 
         .logo img {
@@ -98,8 +98,8 @@
         .link-item {
             display: flex;
             align-items: center;
-            justify-content: center; /* 方案A：保持居中 */
-            gap: 12px; /* 增加固定间距，优化视觉对齐 */
+            justify-content: center; /* 电脑端保持居中 */
+            gap: 12px;
             padding: 16px 24px;
             background: #21262d;
             color: #c9d1d9;
@@ -114,8 +114,8 @@
             width: 24px;
             height: 24px;
             border-radius: 4px;
-            object-fit: contain; /* 确保图标比例正常，不拉伸 */
-            flex-shrink: 0; /* 禁止图标缩放 */
+            object-fit: contain;
+            flex-shrink: 0;
         }
 
         .link-item:hover {
@@ -124,7 +124,6 @@
             transform: translateY(-2px);
         }
 
-        /* 联系方式区域 - 低调设计 */
         .contact-box {
             display: flex;
             justify-content: center;
@@ -132,27 +131,27 @@
             margin-top: 20px;
             margin-bottom: 30px;
             padding-top: 20px;
-            border-top: 1px dashed #30363d; /* 使用虚线与按钮区做弱分割 */
+            border-top: 1px dashed #30363d;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
             gap: 8px;
-            color: #6e7681; /* 默认灰色，低调 */
+            color: #6e7681;
             text-decoration: none;
             font-size: 0.9em;
             transition: all 0.3s ease;
+            white-space: nowrap; /* 防止邮箱换行 */
         }
 
         .contact-item img {
             width: 18px;
             height: 18px;
-            opacity: 0.6; /* 图标默认半透明 */
+            opacity: 0.6;
             transition: all 0.3s ease;
         }
 
-        /* 悬停时高亮，显示品牌色 */
         .contact-item:hover {
             color: #c9d1d9;
         }
@@ -165,9 +164,9 @@
             text-align: center;
             color: #6e7681;
             font-size: 0.9em;
-            /* margin-top 由 contact-box 承担 */
         }
 
+        /* 移动端适配核心代码 */
         @media (max-width: 600px) {
             h1 {
                 font-size: 2.5em;
@@ -178,20 +177,26 @@
                 gap: 15px;
             }
             .container {
-                padding: 40px 30px;
+                padding: 40px 20px; /* 稍微减少手机端的内边距，给内容更多空间 */
             }
             .quote {
                 font-size: 1.05em;
             }
-            /* 移动端保持双列布局，因为现在有6个，双列很整齐 */
+            
+            /* 1. 修复按钮对齐：强制单列，且强制左对齐+固定缩进 */
             .links {
-                grid-template-columns: repeat(2, 1fr); 
+                grid-template-columns: 1fr; 
             }
-            /* 如果手机屏幕特别小，可以考虑强制单列，但双列通常更紧凑 */
-            @media (max-width: 380px) {
-                .links {
-                    grid-template-columns: 1fr;
-                }
+            .link-item {
+                justify-content: flex-start; /* 关键：左对齐，让图标在一条线上 */
+                padding-left: 28%; /* 关键：左侧留白28%，视觉上看起来像是在中间，但对齐很完美 */
+            }
+
+            /* 2. 修复联系方式溢出：改为上下垂直排列 */
+            .contact-box {
+                flex-direction: column; /* 垂直排列 */
+                align-items: center;    /* 居中对齐 */
+                gap: 12px;              /* 缩小间距 */
             }
         }
     </style>
@@ -238,12 +243,12 @@
         </div>
 
         <div class="contact-box">
-            <a href="mailto:youxia2025@gmail.com" class="contact-item" title="发送邮件到 Gmail">
+            <a href="mailto:youxia2025@gmail.com" class="contact-item" title="发送邮件到我的 Gmail">
                 <img src="https://api.iconify.design/simple-icons:gmail.svg?color=%23c9d1d9" alt="Gmail">
                 youxia2025@gmail.com
             </a>
-            <a href="mailto:fujingzhai5@163.com" class="contact-item" title="发送邮件到网易邮箱">
-                <img src="https://api.iconify.design/simple-icons:netease.svg?color=%23c9d1d9" alt="163 Mail">
+            <a href="mailto:fujingzhai5@163.com" class="contact-item" title="发送邮件到我的网易邮箱">
+                <img src="https://api.iconify.design/mdi:email.svg?color=%23c9d1d9" alt="163 Mail">
                 fujingzhai5@163.com
             </a>
         </div>
